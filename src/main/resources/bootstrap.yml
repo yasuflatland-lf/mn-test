@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: mn-test
+  config-client:
+    enabled: true
+
+kubernetes:
+  client:
+    namespace: dev
+    secrets:
+      enabled: true
