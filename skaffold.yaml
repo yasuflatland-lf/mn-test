@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: mn-test
+build:
+  artifacts:
+  - image: localhost:5000/mn-test
+
+deploy:
+  kubectl:
+    manifests:
+    - namespace.yaml
+    - mysql.yaml
+    - k8s.yml
