@@ -98,7 +98,7 @@ public class HelloController {
         }).subscribeOn(Schedulers.io()).subscribe(new DisposableSingleObserver<Integer>() {
       @Override
       public void onSuccess(Integer integer) {
-        System.out.println(String.valueOf(integer) + "   Changed ----------");
+        System.out.println(String.valueOf(integer) + " part2");
       }
 
       @Override
@@ -147,7 +147,6 @@ public class HelloController {
 
   @Get(produces = MediaType.TEXT_PLAIN)
   public String index() {
-    //envPrint();
     // queryTest();
     create();
     // A simple query

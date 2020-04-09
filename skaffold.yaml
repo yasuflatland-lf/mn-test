@@ -5,10 +5,20 @@ metadata:
 build:
   artifacts:
   - image: localhost:5000/mn-test
+    context: ./
+    docker:
+      noCache: true
+  local: {}
 
 deploy:
   kubectl:
     manifests:
-    - namespace.yaml
-    - mysql.yaml
-    - k8s.yml
+    - k8s/namespace.yaml
+    - k8s/mysql.yaml
+    - k8s/k8s.yaml
+
+portForward:
+  - resourceType: service
+    resourceName: localhost:5000/mn-test
+    port: 8080
+    localPort: 8080
